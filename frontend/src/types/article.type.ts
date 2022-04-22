@@ -1,7 +1,9 @@
 export default interface ArticleData {
     id?: number | null,
     title: string,
-    blurb?: string,
-    body: string,
-    published?: boolean,
+    author: number,
+    excerpt?: string,
+    content: string,
+    imageurl: string,
+    status: string
 }

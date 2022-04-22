@@ -29,7 +29,7 @@ const Search = ( {clear = true}: Props ) => {
             {clear && <button onClick={() => setSelection("")}>Clear</button>}
             { selection.length ? 
                 <div className="results" >
-                    { contextData?.filter(data => data.title.includes(selection) || data.body.includes(selection)).slice(0,5).map(data => <p key={data.id} onClick={() => navigate(`/articles/${data.id}`)}>{data.title.substring(0,15)}</p>)}
+                    { contextData?.filter(data => data.title.includes(selection) || data.content.includes(selection)).slice(0,5).map(data => <p key={data.id} onClick={() => navigate(`/articles/${data.id}`)}>{data.title.substring(0,15)}</p>)}
                 </div> 
                 : null
             }
