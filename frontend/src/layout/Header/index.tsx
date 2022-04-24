@@ -9,13 +9,22 @@ const Header: React.FC = () => {
     const { title } = useContext(TitleContext)
 
     useEffect(() => {
-        document.title = title;
+        let pageTitle: string
+        if (title != 'Dice Corner'){
+            pageTitle = "Dice Corner - " + title
+        } else {
+            pageTitle = "Dice Corner"
+        }
+        document.title = pageTitle;
     },[title])
     
     return ( 
         <StyledHeader >
             <div className="headerBackground">
-                <h1>{title}</h1>
+                <div className="titleBox">
+                    <h1>Dice Corner</h1>
+                    {title != 'Dice Corner' ? <h1>{title}</h1> : <h1 style={{visibility: 'hidden'}}>Home</h1> }
+                </div>
             </div>
 
         </StyledHeader>
