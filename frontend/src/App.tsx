@@ -9,6 +9,7 @@ import Home from './pages/Home';
 
 // Import Contexts
 import { ArticleProvider } from './contexts/articleContext';
+import { TitleProvider } from "./contexts/titleContext";
 
 // Style Imports
 import GlobalStyle from './styles/GlobalStyles';
@@ -30,19 +31,21 @@ function App() {
       <ThemeProvider theme={primaryTheme}>
 
         <ArticleProvider>
-          <Router>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="articles" element={<Articles />}>
-                <Route path="" element={<ArticleList />} />
-                <Route path=":id" element={<Article />} />
-              </Route>
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </Layout>
-          </Router>
+          <TitleProvider>
+            <Router>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="articles" element={<Articles />}>
+                  <Route path="" element={<ArticleList />} />
+                  <Route path=":id" element={<Article />} />
+                </Route>
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Layout>
+            </Router>
+          </TitleProvider>
         </ArticleProvider>
       </ThemeProvider>
     </>

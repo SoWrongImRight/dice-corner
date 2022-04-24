@@ -1,11 +1,15 @@
 import React from 'react';
 
+import { useTitle } from "../../hooks/useTitle";
+
 import StyledContact from './Contact.styles';
 
 function Contact() {
+    useTitle("Contact Us")
+
     return ( 
         <StyledContact>
-            <h1>Contact</h1>
+            
         </StyledContact>
      );
 }

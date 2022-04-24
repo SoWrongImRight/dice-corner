@@ -1,29 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
-interface HeaderProps {
-    isSide: boolean,
-    toggleSideNav(): void;
-    isInfo: boolean,
-    toggleInfo(): void;
-}
+import { StyledHeader } from "./Header.styles";
 
-const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+import { TitleContext } from "../../contexts/titleContext";
+
+
+const Header: React.FC = () => {
+    const { title } = useContext(TitleContext)
+
+    useEffect(() => {
+        document.title = title;
+    },[title])
+    
     return ( 
-        <div>
-            <div>
-                <h1>Header</h1>
+        <StyledHeader >
+            <div className="headerBackground">
+                <h1>{title}</h1>
             </div>
-            <div style={{placeContent: 'start end'}}>
-                <label style={{margin: '1rem', fontSize: 16}}>
-                    Side Nav Menu
-                    <input type="checkbox" checked={props.isSide} onChange={props.toggleSideNav} />
-                </label>
-                <label style={{fontSize: 16}}>
-                    Side Info Bar
-                    <input type="checkbox" checked={props.isInfo} onChange={props.toggleInfo} />
-                </label>
-            </div>
-        </div>
+
+        </StyledHeader>
      );
 }
 

@@ -1,12 +1,15 @@
-import React  from 'react';
 import { Outlet } from 'react-router-dom'
+
+import { useTitle } from "../../hooks/useTitle";
 
 import StyledArticles from './Articles.styles';
 
 function Articles() {
+    useTitle("Articles")
+
     return ( 
         <StyledArticles>
-            <h1>Articles</h1>
+            
             <Outlet />
         </StyledArticles>
      );
