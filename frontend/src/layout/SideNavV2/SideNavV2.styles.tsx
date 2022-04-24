@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledSideNavV2 = styled.div`
     width: 10vw;
-    position: fixed;
+    position: absolute;
     left: 0;
     display: grid;
     overflow: hidden;
