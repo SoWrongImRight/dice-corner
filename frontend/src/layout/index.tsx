@@ -1,5 +1,11 @@
 import React, { useState, Suspense } from 'react';
 
+// Import hooks
+import { useWindowSize } from "../hooks/useWindowSize";
+
+// Import types
+import WindowType from "../types/windowType";
+
 // Import Layout components
 import Header from './Header';
 import Navbar from './Navbar';
@@ -15,25 +21,16 @@ const ScrollToTop = React.lazy(() => import('../components/ScrollToTop'));
 
 const Layout: React.FC = ({children}) => {
     const [isBanner, setIsBanner] = useState(false);
-    const [isSide, setIsSide] = useState(true);
-
-    const [isInfo, setIsInfo] = useState(false)
-
-    const toggleSideNav = () => {
-        setIsSide(!isSide)
-    }
-
-    const toggleInfo = () => {
-        setIsInfo(!isInfo)
-    }
+    
+    const windowSize: WindowType = useWindowSize();
 
     return ( 
         <StyledLayout>
             <Suspense fallback={null}>
                 {isBanner && <Banner />}
-                <Header isSide={isSide} toggleSideNav={toggleSideNav} isInfo={isInfo} toggleInfo={toggleInfo} />
-                {isSide ? <SideNavV2 /> : <Navbar />}
-                {isInfo && <SideInfo />}
+                <Header />
+                {windowSize.width! < 680 ? <Navbar /> : <SideNavV2 />}
+                {windowSize.width! > 680 && <SideInfo />}
                 <main>
                     {children}
                 </main>

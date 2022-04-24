@@ -12,8 +12,6 @@ function ArticleList() {
     const [isDisabled, setIsDisabled] = useState(false)
     const contextData: ArticleData[] | null = useContext(ArticleContext) 
 
-    console.log(contextData!.length)
-
     const loadMore = () => {
         setQty((prevState) => prevState + 5)
         if (qty >= contextData!.length) {
