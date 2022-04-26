@@ -1,6 +1,7 @@
 import React, { useContext, useState, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
+import StyledArticleList from "./ArticleList.styles";
 import Spinner from '../../../components/Spinner'
 
 import { ArticleContext } from '../../../contexts/articleContext';
@@ -20,7 +21,7 @@ function ArticleList() {
     }
 
     return ( 
-        <div>
+        <StyledArticleList>
             <h1>
                 Article List
             </h1>
@@ -29,7 +30,7 @@ function ArticleList() {
             </Suspense>
             <button disabled={isDisabled} onClick={loadMore}>Load More</button>
             {isDisabled && <p>No additional articles found</p>}
-        </div>
+        </StyledArticleList>
      );
 }
 

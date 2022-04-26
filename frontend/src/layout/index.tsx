@@ -32,7 +32,9 @@ const Layout: React.FC = ({children}) => {
                 {windowSize.width! < 680 ? <Navbar /> : <SideNavV2 />}
                 {windowSize.width! > 680 && <SideInfo />}
                 <main>
-                    {children}
+                    <div className="backgroundShading" >
+                        {children}
+                    </div>
                 </main>
                 <ScrollToTop />
                 <Footer />

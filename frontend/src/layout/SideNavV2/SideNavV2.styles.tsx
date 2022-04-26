@@ -6,6 +6,7 @@ const StyledSideNavV2 = styled.div`
     left: 0;
     display: grid;
     overflow: hidden;
+    background: rgba(255,255,255,0.25);
 
     .search-div {
         width: 10vw;
@@ -19,6 +20,10 @@ const StyledSideNavV2 = styled.div`
         li {
             cursor: pointer;
             padding: 0.5rem 0;
+
+            a {
+                font-family: "Hamlet";
+            }
         }
     }
 `

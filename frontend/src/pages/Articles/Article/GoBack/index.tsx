@@ -5,7 +5,7 @@ function GoBack() {
     const navigate = useNavigate()
 
     return (
-        <button onClick={() => navigate(-1)}>GoBack</button>
+        <button onClick={() => navigate(-1)} style={{cursor: "pointer"}}>GoBack</button>
     )
 }
 
