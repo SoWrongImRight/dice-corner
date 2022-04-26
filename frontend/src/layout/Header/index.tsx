@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 
+import { GiDiceTwentyFacesOne, GiDiceTwentyFacesTwenty } from 'react-icons/gi'
+
 import { StyledHeader } from "./Header.styles";
 
 import { TitleContext } from "../../contexts/titleContext";
@@ -23,7 +25,7 @@ const Header: React.FC = () => {
             <div className="headerBackground">
                 <div className="titleBox">
                     <h1>Dice Corner</h1>
-                    {title != 'Dice Corner' ? <h1>{title}</h1> : <h1 style={{visibility: 'hidden'}}>Home</h1> }
+                    {title != 'Dice Corner' ? <><h1><GiDiceTwentyFacesOne title="twenty sided die" />{title}<GiDiceTwentyFacesTwenty title="twenty sided die" /></h1></> : <h1 style={{visibility: 'hidden'}}>Home</h1> }
                 </div>
             </div>
 

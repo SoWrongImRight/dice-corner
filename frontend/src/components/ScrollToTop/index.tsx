@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import {FaArrowCircleUp} from 'react-icons/fa';
+import { ImArrowUp2 } from 'react-icons/im';
 
 import StyledScrollToTop from './ScrollToTop.styles';
 
@@ -28,7 +28,7 @@ const ScrollToTop: React.FC = () => {
 
     return (
         <StyledScrollToTop>
-            <FaArrowCircleUp onClick={scrollToTop}
+            <ImArrowUp2 onClick={scrollToTop}
                 style={{display: visible ? 'inline' : 'none'}} />
         </StyledScrollToTop>
     )

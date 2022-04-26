@@ -16,7 +16,7 @@ function SideNavV2() {
                 <Search clear={false} />
             </div>
             <ul>
-                {navLinks.map(nav => <li key={nav.name} onClick={() => navigate(`${nav.url}`)}>{nav.name}</li>)}
+                {navLinks.map(nav => <li key={nav.name} onClick={() => navigate(`${nav.url}`)} ><a>{nav.name.toUpperCase()}</a></li>)}
             </ul>
         </StyledSideNavV2>
      );

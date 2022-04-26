@@ -1,12 +1,14 @@
 import React from 'react';
 
+import StyledFooter from "./Footer.styles";
+
 function Footer() {
+    const cpYear = new Date().getFullYear()
+
     return ( 
-        <div>
-            <h1>
-                Footer
-            </h1>
-        </div>
+        <StyledFooter>
+            <p>&copy; {cpYear} Dice Corner </p>
+        </StyledFooter>
      );
 }
 

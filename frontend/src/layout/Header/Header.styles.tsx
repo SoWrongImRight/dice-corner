@@ -10,12 +10,12 @@ export const StyledHeader = styled.div`
   .headerBackground {
     height: 360px;
     width: auto;
-    background-image: url('/assets/images/dice-corner-header.jpg');
-    background-position: center center;
+/*     background-image: url('/assets/images/dice-corner-header.jpg');
+    background-position: center center; */
     position: relative;
     
     @media (max-width: 680px) {
-      height: 10vh;
+      height: 15vh;
       width: auto;
     }
 
